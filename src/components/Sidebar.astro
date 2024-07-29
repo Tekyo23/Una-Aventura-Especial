@@ -2,7 +2,9 @@
 
 ---
 <div id="sidebar">
-	<h1 class="sidebar__title">Una aventura especial</h1>
+		<h1 class="sidebar__title__wrapper">
+			<a href="/" class="sidebar__title">Una Aventura Especial</a>
+		</h1>
 	<ui class="sidebar__list">
 		<li class="chapter__wrapper">
 			<a href="/chapter1" class="chapter__title">Capítulo 1</a>
@@ -49,11 +51,15 @@
 		box-shadow: 10px 0rem 30px #00000050;
 	}
 
-	.sidebar__title {
+	.sidebar__title__wrapper {
 		margin: 2.75rem 2.75rem 1.25rem 2.75rem;
 		font-size: 30px;
 		text-align: center;
+	}
+
+	.sidebar__title {
 		color: #fff;
+		text-decoration: none;
 	}
 
 	.sidebar__list {
