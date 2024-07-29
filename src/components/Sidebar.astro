@@ -1,19 +1,19 @@
 ---
----
 
+---
 <div id="sidebar">
 	<h1 class="sidebar__title">Una aventura especial</h1>
 	<ui class="sidebar__list">
-		<li class="chapter__wrapper active">
-			<a href="./chapter1" class="chapter__title">Capítulo 1</a>
+		<li class="chapter__wrapper">
+			<a href="/chapter1" class="chapter__title">Capítulo 1</a>
 			<div class="status status--new">Nuevo</div>
 		</li>
 		<li class="chapter__wrapper">
-			<a href="./chapter1" class="chapter__title">Capítulo 2</a>
+			<a href="/chapter2" class="chapter__title">Capítulo 2</a>
 			<div class="status status--in-progress">En progreso</div>
 		</li>
 		<li class="chapter__wrapper">
-			<a href="./chapter1" class="chapter__title">Capítulo 3</a>
+			<a href="/chapter3" class="chapter__title">Capítulo 3</a>
 			<div class="status status--soon ">Próximamente</div>
 		</li>
 	</ui>
@@ -137,3 +137,14 @@
 	}
 
 </style>
+<script>
+	const chapter = document.querySelectorAll('.chapter__title');
+	const activePage = window.location.pathname;
+
+	chapter.forEach(link => {
+		console.log(link.getAttribute('href'))
+		if (link.getAttribute('href') === activePage) {
+			link.parentElement.classList.add('active');
+		}
+	});
+</script>
