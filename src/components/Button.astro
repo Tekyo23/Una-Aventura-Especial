@@ -1,0 +1,27 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<a class="button" href="">
+    {title}
+</a>
+
+<style>
+    .button {
+        display: flex;
+        align-items: center;
+        height: 55px;
+        width: fit-content;
+        box-sizing: border-box;
+        padding: 20px 27px;
+        color: #fff;
+        background: var(--primary-black);
+        text-decoration: none;
+        font-family: 'Inter';
+        font-weight: 600;
+        font-size: 15px;
+    }
+</style>
