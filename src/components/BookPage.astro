@@ -1,20 +1,26 @@
 ---
 interface Props {
-	title: string | null;
-	body: string;
-	page: string | null;
+	title?: string;
+	page?: string;
 }
 
-const { title, body, page } = Astro.props;
+const { title, page } = Astro.props;
 ---
 
-<div class="book-page">
-	<div class="title">{title}</div>
-	<div class="body">{body}</div>
-	<div class="page">{page}</div>
-</div>
+	<div class="book-page">
+		<div class="title">{title}</div>
+		<div class="body"><slot/></div>
+		<div class="page">{page}</div>
+	</div>
 
-<style>
+<style is:global>
+	.double-page {
+		display: flex;
+		margin: auto;
+		height: fit-content;
+		box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.25);
+	}
+
 	.book-page {
 		display: flex;
 		flex-direction: column;
@@ -22,10 +28,8 @@ const { title, body, page } = Astro.props;
 		aspect-ratio: 621 / 796;
 		height: 87dvh;
 		background: #fff;
-		margin-block: auto;
 		padding: 8.43vh 8.11vh 8.87vh 9.73vh;
 		box-sizing: border-box;
-		box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.25);
 		font-family: 'Book Antiqua';
 	}
 
@@ -33,13 +37,24 @@ const { title, body, page } = Astro.props;
 		font-size: 2.16vh;
 		font-weight: 700;
 		text-align: center;
+		margin-bottom:  3.89vh;
+	}
+
+	.title:empty {
+		margin: 0;
 	}
 
 	.body {
-		margin-top:  3.89vh;
-		font-size: 1.62vh;
-		text-indent: 3.24vh;
+		font-size: 1.64vh;
 		text-align: justify;
+	}
+
+	.body > p {
+		text-indent: 3.24vh;
+	}
+
+	.body > .no-indent {
+		text-indent: 0;
 	}
 
 	.page {
@@ -49,6 +64,15 @@ const { title, body, page } = Astro.props;
 		opacity: 70%;
 		position: absolute;
 		right: 50%;
-		bottom: 6.91vh;
+		bottom: 6vh;
 	}
+
+	.quote {
+		margin-block: 1.188rem;
+	}
+
+	.hide {
+		display: none;
+	}
+
 </style>

@@ -1,13 +1,37 @@
 ---
-import Cover from '../components/Cover.astro';
+import Introduction from '../components/Introduction.astro';
 import Layout from '../layouts/Layout.astro';
+import BookPage from '../components/BookPage.astro'
 ---
 
 <Layout title="Una Aventura Especial">
 	<main>
-		<Cover />
+		<div class="double-page" id="double-page__1">
+			<Introduction />
+			<BookPage />
+		</div>
+		<div class="double-page hide" id="double-page__2">
+			<BookPage />
+			<div class="book-page dedication">
+				<div class="body">
+					<p class="dedication__text">Para aquellas personas que <br>se encuentren perdidas en la vida.</p>
+				</div>
+			</div>
+		</div>
 	</main>
 </Layout>
 
 <style>
+	.double-page {
+		margin: auto;
+	}
+
+	.dedication {
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.dedication__text {
+		text-align: right;
+	}
 </style>

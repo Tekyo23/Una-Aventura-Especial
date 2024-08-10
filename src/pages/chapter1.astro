@@ -5,14 +5,55 @@ import BookPage from '../components/BookPage.astro';
 
 <Layout title="Una Aventura Especial">
 	<main>
-		<BookPage
-		title = "Capítulo 1"
-		body = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quaerat fugit dicta deserunt, perferendis delectus atque quod qui dolore a explicabo, ad asperiores cumque fugiat molestias libero. Porro perspiciatis dolorum velit, tenetur odit dolores! Mollitia, quos asperiores fuga porro similique, adipisci explicabo, corrupti illo ipsam quod voluptatem possimus blanditiis ipsa eaque magni sapiente ea suscipit. Deserunt repellat eum eius possimus, deleniti optio, quos quae odio sint ea animi pariatur laborum, error similique ullam! Nulla reprehenderit itaque, dolorum distinctio impedit a modi odio ut pariatur rem? Nisi perspiciatis consequuntur officiis rerum repellat unde deserunt animi cumque labore, adipisci quibusdam veritatis ad dolorem dolorum delectus quo nulla quaerat quam reiciendis, accusantium illum! Recusandae excepturi, consequuntur perferendis eius non error aut eos magni officia optio perspiciatis sint odio iste eum laborum atque, soluta, unde omnis nisi? Dolorum velit earum, sint consequuntur recusandae praesentium eligendi repellat ducimus obcaecati labore libero at hic sapiente, tenetur consequatur architecto accusamus aperiam? Voluptatibus delectus qui iure repudiandae excepturi fugit, architecto quas ea itaque nobis consequuntur quibusdam. Quis omnis similique quisquam dolor, molestiae, alias a magni quo quasi expedita perspiciatis nobis rem atque natus culpa impedit. Ratione consequatur magnam neque. Voluptatum voluptate maxime dignissimos dolores ipsam a adipisci beatae."
-		page = "1"
-		/>
+		<div class="double-page" id="double-page__1">
+			<BookPage title = "Capítulo 1" page = "5">
+				<p>Fue entonces cuando vi la luz al final del túnel. El tren salía de este mientras yo me disponía a continuar con mi lectura. Sin embargo, no pude ignorar el cambio de paisaje. Casi siete años habían pasado desde la última vez que había realizado aquel trayecto, aunque, por aquel entonces, lo había hecho con mi ahora difunta madre para pasar el verano. Había olvidado lo drástico que era el contraste entre los mares amarillos de cereales previos al túnel y los verdes bosques montañosos que se extendían más allá.</p>
+				<p>Bajé la ventanilla, respiré hondo y espiré lentamente, entrando en sintonía con el ambiente que me rodeaba.</p>
+				<p>El tren finalmente llegó a la estación. Terminé de leer la página del libro en la que me encontraba y procedí a bajar mi maleta del portaequipajes. No había nadie esperándome, después de todo no le había dicho a nadie a dónde iba. Aun así, la azafata se despidió de mí con una leve sonrisa.</p>	
+				<p>Tras el silbido de la locomotora, el vehículo siguió su curso hacia la siguiente parada, dejándonos solo a mí y a dos señores más en la plataforma.</p>
+				<p>La estación no era nada extravagante. Consistía en un pequeño edificio de piedra rectangular con una puerta roja y dos ventanas a cada lado. Por el lado derecho del tejado asomaba tímidamente una chimenea de la que salía humo, mientras que por la ventana izquierda destacaba un pequeño punto de luz, probablemente de alguna vela encendida. Frente a la construcción se encontraban las vías de tren, con una plataforma a cada lado, ambas iluminadas por un par de tenues farolas; y, por detrás de esta, pasaba una carretera bastante descuidada y llena de baches acompañada por una parada de autobús.</p>
+				<p>Me senté a esperar. No tenía claro cuánto tiempo iba a tardar en pasar el siguiente autobús, pero lo hice igual ya que no tenía prisa alguna.</p>
+			</BookPage>
+			<BookPage page = "6">
+				<p>Fue entonces cuando vi la luz al final del túnel. El tren salía de este mientras yo me disponía a continuar con mi lectura. Sin embargo, no pude ignorar el cambio de paisaje. Casi siete años habían pasado desde la última vez que había realizado aquel trayecto, aunque, por aquel entonces, lo había hecho con mi ahora difunta madre para pasar el verano. Había olvidado lo drástico que era el contraste entre los mares amarillos de cereales previos al túnel y los verdes bosques montañosos que se extendían más allá.</p>
+				<p>Pese a todo ello, el lugar transmitía una cierta tranquilidad, sobre todo al compararlo con cualquier ambiente de la ciudad.</p>
+				<p>Tras lo que me parecieron unos veinte minutos y un par de coches, decidí retomar la lectura de <i>El Guardián entre el centeno</i>.</p>
+				<p class="quote">«Hay tíos que se pasan días enteros buscando algo que han perdido. Yo creo que nunca tengo nada que me importe mucho perder. Quizá por eso sea en parte cobarde. Aunque no es excusa. No lo es.»</p>
+				<p>El libro había logrado cautivarme desde su primera frase. Pese a no ser uno de esos libros que narran una acción que te deja en constate suspense con el final de cada capítulo, el libro de J. D. Salinger era uno de esos capaces de mantenerme esposado a sus páginas durante horas. De hecho, tan solo en el tren me había leído más de cien páginas. Y eso que había empezado el viaje terminando otro libro.</p>
+				<p>El silencio que me rodeaba era ensordecedor. Los coches habían dejado de pasar, no había más trenes hasta mañana y la chimenea había dejado de humear. La tranquilidad del campo acentúo ese rechazo al bullicio de la ciudad que me había llevado a coger ese tren. De vez en cuando me sentía abrumado por todo ello y necesitaba refugiarme en mí mismo, algo que generalmente lograba hacer con una simple escapada al riachuelo de la montaña tras el instituto del barrio. Sin embargo, estos últimos meses habían tenido un peso superior. </p>
+			</BookPage>
+		</div>
+		<div class="double-page hide" id="double-page__2">
+			<BookPage page="7">
+				<p>El arroyo no había sido suficiente y, tras meditarlo unos días, decidí que lo mejor que podía hacer era tomarme unas vacaciones del trabajo. Fue así como llegué a la estación Mediodía.</p>
+				<p>Envuelto en mis pensamientos, me sobresalté cuando escuché el chapoteo de una gota sobre la lámina metálica de la parada. Había empezado a llover. Por suerte para mí, falto de paraguas, no parecía que fuese a hacerlo muy fuerte.</p>
+				<p>Una vez más, me sumí en mis pensamientos, recordando aquellas tardes en las que jugaba bajo la lluvia hasta cansarme. Al principio mi madre era reacia a ello, pero con el tiempo no le quedó más remedio que aceptarlo. No podía enfadarse por verme tan feliz. Terminada la tarde corría a casa para darme un baño y limpiarme a fondo. Con el paso de los años cambié el hábito de jugar bajo la lluvia por el de leer en una ventana mientras escucho la melodía de las gotas contra el cristal.</p>
+				<p>Entre toda esta lluvia llegó el autobús. El conductor era un señor mayor, de unos setenta años, que tuvo la paciencia de esperar a que reuniese el euro con veinte que costaba el billete en monedas de diez. Me senté al fondo del pasillo, desde donde podía observarlo todo.</p>
+				<p>El transporte no iba muy lleno. Delante del todo había un grupo de cuatro abuelas con unas cestas variadas. Una de ellas cargaba una con huevos y naranjas. La más sonriente portaba unas botellas de leche con un par de lechugas y unas cuantas zanahorias, mientras que las otras dos debían de llevar panes y bollos, pero no podía distinguirlo debido a que iban tapados. Ya más cerca de mí había dos chavales que parecían venir del colegio. El chico de gafas iba reviviéndole a su compañero como había logrado marcar un gol en el partido de esa tarde que, según entendí, se había perdido por estar castigado.</p>
+				<p>El ambiente del autobús me llevó a recordar aquellas tardes en las que volvía a mi casa después de un día de escuela. Nunca destaqué por parecerme a los demás niños. Mientras ellos volvían sudados, con los pantalones manchados ―incluso rotos― y muy</p>
+			</BookPage>
+			<BookPage page="8">
+				<p class="no-indent">animados, yo procesaba la nueva historia que acababa de leer en la biblioteca.</p>
+				<p>Generalmente no me llevaba los libros a mi casa, pero recuerdo el día en que descubrí Viaje al centro de la Tierra, de Julio Verne. El libro me atrapó tanto entre sus páginas que llegué a olvidarme de bajar en mi parada. Durante la cena, lo único en lo que podía pensar era en continuar la lectura. Por suerte, esa tarde se presentó fresquita, con un sol que rayaba el cielo desde el horizonte, tiñéndolo de tonos naranjas y morados. Fue así como pasé las siguientes dos tardes: sentado bajo el árbol de mi jardín, escuchando a los pájaros cantar y leyendo hasta la hora de dormir.</p>
+				<p>Cuando el autobús llegó a mi parada, había dejado de llover. Me despedí del conductor y puse los pies en la carretera.</p>
+				<p>Mi casa se encontraba a unos diez minutos andando de la parada más cercana, por lo que todavía me quedaba un ligero paseo por delante.</p>
+				<p>Dejé atrás el pequeño grupo de casas donde había bajado y tomé el sendero que llevaba a mi destino.</p>
+				<p>El camino había ido borrándose con los años a causa de la vegetación que poco a poco se apoderaba de él. Además, los árboles habían ido dejando caer sus hojas conforme pasaba el otoño, cubriendo el suelo de tonos amarillos, rojizos y naranjas. Sin embargo, todavía servían de guía las piedras que ya mi abuelo había puesto para marcar el sendero.</p>
+				<p>Al cabo de esos cinco minutos salí de la pequeña arboleda que separaba a mi hogar del resto.</p>
+				<p>Claramente no era la primera vez que pasaba por allí, pero inevitablemente las vistas me volvieron a dejar boquiabierto.</p>
+				<p>Vastas montañas con cimas nevadas se extendían en el horizonte, dándole una sensación de infinita continuidad. Dos de ellas, más pequeñas, bordeaban por el este a un gran lago azul cristalino, el mismo en el que me había bañado innumerables veces de pequeño durante el verano.</p>
+				<p>La acogedora casa estaba formada por dos pisos: el superior,</p>
+			</BookPage>
+		</div>
+		<div class="double-page hide" id="double-page__3">
+			<BookPage page = "9">
+				<p class="no-indent">destinado a los dormitorios, y el inferior, para el resto de las habitaciones. Las paredes de piedra eran ocasionalmente interrumpidas por ventanas de madera blanquecinas. Tal era el caso del porche frontal, con dos a cada lado de la puerta principal.</p>
+				<p>El lado izquierdo tenía una pequeña extensión dedicada a la despensa de la cocina y un pequeño tejado bajo el que se guardaban las leñas para la chimenea. Mientras que el lado derecho sobresalía hacía delante, creando espacio para el escritorio que se encontraba adentro y que contaba con dos ventanas para una buena iluminación.</p>
+			</BookPage>
+		</div>
 	</main>
 </Layout>
 
 <style>
-	
+/* First breakdown should be at 1520px to remove double page */
 </style>
