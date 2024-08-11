@@ -120,19 +120,13 @@
             console.log(visible_pages.length)
         } else if (window.location.pathname == '/chapter1' && currentPageIndex == 0) {
             window.location.href = '/?page=last';
-        } else if (currentPageIndex == 0) {
+        } else if (currentPageIndex == 0 && window.location.pathname != '/') {
             window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last`;
+        } else {
+            window.location.href = '/';
         };
 
 
     };
-
-    function last_page() {
-        visible_pages[currentPageIndex].classList.add("hide");
-        currentPageIndex = visible_pages.length - 1;
-        visible_pages[currentPageIndex].classList.remove("hide")
-        
-        console.log('Current page ' + currentPageIndex)
-        console.log('Current chapter ' + currentChapterIndex)
-    }    
+  
 </script>
