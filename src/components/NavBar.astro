@@ -76,7 +76,8 @@
         }
     }
 
-    //Previous-Next Page Button (First breakdown should be at 1520px to remove double page)
+    //Previous-Next Page Button
+    {/* (First breakdown should be at 1520px to remove double page) */}
     var previous_page = document.getElementById("previous-page")
     var next_page = document.getElementById("next-page")
     const visible_pages = document.querySelectorAll(".double-page")
@@ -88,9 +89,6 @@
         currentPageIndex = visible_pages.length - 1;
         visible_pages[currentPageIndex].classList.remove("hide")
     }
-    // Revisar parametro page con valor last.
-    // Si se cumple currentPageIndex = totalPages -1
-    //urlsearchparam
     
     const chapterPaths = [
     "/chapter1",
