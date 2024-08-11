@@ -2,7 +2,7 @@
 ---
 <div class="navbar__container">
     <div class="navbar">
-        <div class="previous-page" title="Página anterior">
+        <div id="previous-page" title="Página anterior">
             <svg width="3.46vh" height="3.46vh" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
         </div>
         <div id="theme" title="Activar modo oscuro">
@@ -13,7 +13,7 @@
                 <svg width="3.46vh" height="3.46vh" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             </div>
         </div>
-        <div class="next-page" title="Siguiente página">
+        <div id="next-page" title="Siguiente página">
             <svg width="3.46vh" height="3.46vh" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
         </div>
     </div>
@@ -47,25 +47,23 @@
         box-shadow: 0px 0rem 30px #00000070;
     }
 
-    .previous-page,
-    .next-page,
+    #previous-page,
+    #next-page,
     #theme {
         height: 3.46vh;
         stroke: #fff;
         cursor: pointer;
     }
 
-    .hide {
-        display: none;
-    }
-
 </style>
 
 <script>
+    //Dark-Light Theme Button
     var theme = document.getElementById("theme");
     var dark_theme = document.getElementById("theme--dark");
     var light_theme = document.getElementById("theme--light");
     const bookPage = document.querySelector(".book-page");
+    
 
     theme.onclick = function(){
         bookPage.classList.toggle("dark-theme");
@@ -77,4 +75,64 @@
             theme.setAttribute("title","Activar modo oscuro")
         }
     }
+
+    //Previous-Next Page Button (First breakdown should be at 1520px to remove double page)
+    var previous_page = document.getElementById("previous-page")
+    var next_page = document.getElementById("next-page")
+    const visible_pages = document.querySelectorAll(".double-page")
+    let currentPageIndex = 0;
+    let totalPages = visible_pages.length;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('page') === 'last') {
+        visible_pages[currentPageIndex].classList.add("hide");
+        currentPageIndex = visible_pages.length - 1;
+        visible_pages[currentPageIndex].classList.remove("hide")
+    }
+    // Revisar parametro page con valor last.
+    // Si se cumple currentPageIndex = totalPages -1
+    //urlsearchparam
+    
+    const chapterPaths = [
+    "/chapter1",
+    "/chapter2",
+    "/chapter3",
+    ];
+    const currentChapterIndex = chapterPaths.indexOf(window.location.pathname);
+
+    next_page.onclick = function() {
+        if (currentPageIndex < totalPages - 1) {
+            visible_pages[currentPageIndex].classList.add("hide");
+            currentPageIndex++;
+            visible_pages[currentPageIndex].classList.remove("hide");
+        } else if (currentPageIndex = totalPages) {
+            window.location.href = chapterPaths[currentChapterIndex + 1];
+        }
+        console.log('Current page ' + currentPageIndex)
+        console.log('Current chapter ' + currentChapterIndex)
+    };
+
+    previous_page.onclick = function() {
+        console.log('Current page A ' + currentPageIndex)
+        if (currentPageIndex > 0) {
+            visible_pages[currentPageIndex].classList.add("hide");
+            currentPageIndex--;
+            visible_pages[currentPageIndex].classList.remove("hide");
+            console.log(visible_pages.length)
+        } else if (window.location.pathname == '/chapter1' && currentPageIndex == 0) {
+            window.location.href = '/?page=last';
+        } else if (currentPageIndex == 0) {
+            window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last`;
+        };
+
+
+    };
+
+    function last_page() {
+        visible_pages[currentPageIndex].classList.add("hide");
+        currentPageIndex = visible_pages.length - 1;
+        visible_pages[currentPageIndex].classList.remove("hide")
+        
+        console.log('Current page ' + currentPageIndex)
+        console.log('Current chapter ' + currentChapterIndex)
+    }    
 </script>
