@@ -5,7 +5,7 @@
 		<h1 class="sidebar__title__wrapper">
 			<a href="/" class="sidebar__title">Una Aventura Especial</a>
 		</h1>
-	<ui class="sidebar__list">
+	<ul class="sidebar__list">
 		<li class="chapter__wrapper">
 			<a href="/chapter1" class="chapter__title">Capítulo 1</a>
 			<div class="status status--new">Nuevo</div>
@@ -18,7 +18,7 @@
 			<a href="/chapter3" class="chapter__title">Capítulo 3</a>
 			<div class="status status--soon ">Próximamente</div>
 		</li>
-	</ui>
+	</ul>
 	<div class="sidebar__footer">
 		<h6 class="footer__copy">Tekyo &copy; | Todos los derechos reservados</h6>
 		<div class="footer__media">
@@ -65,7 +65,9 @@
 	.sidebar__list {
 		list-style: none;
 		height: 100%;
-		mask-image: linear-gradient(to bottom, black 75%, transparent)
+		margin: 0;
+		padding: 0;
+		mask-image: linear-gradient(to bottom, black 75%, transparent);
 	}
 
 	.chapter__wrapper {
