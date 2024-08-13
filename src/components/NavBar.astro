@@ -121,17 +121,13 @@
         } else {
             window.location.href = chapterPaths[currentChapterIndex + 1];
         }
-        console.log('Current page ' + currentPageIndex)
-        console.log('Current chapter ' + currentChapterIndex)
     };
 
     previous_page.onclick = function() {
-        console.log('Current page A ' + currentPageIndex)
         if (currentPageIndex > 0) {
             visible_pages[currentPageIndex].classList.add("hide");
             currentPageIndex--;
             visible_pages[currentPageIndex].classList.remove("hide");
-            console.log(visible_pages.length)
         } else if (window.location.pathname == '/chapter1' && currentPageIndex == 0 && light_theme.classList.contains("hide")) {
             window.location.href = '/?page=last&mode=dark';
         } else if (currentPageIndex == 0 && window.location.pathname != '/' && light_theme.classList.contains("hide")) {
