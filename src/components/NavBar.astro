@@ -132,8 +132,10 @@
             window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last&mode=dark`;
         } else if (light_theme.classList.contains("hide") && window.location.pathname != '/') {
             window.location.href = '/' + `?page=last&mode=dark`;
-        } else if (window.location.pathname == '/chapter1') {
+        }  else if (window.location.pathname == 'chapter1') {
             window.location.href = `/?page=last`;
+        } else if (window.location.pathname != '/chapter1') {
+            window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last`;
         } else {
             window.location.href = '/';
         };
