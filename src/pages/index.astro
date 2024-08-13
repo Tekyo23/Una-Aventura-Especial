@@ -12,7 +12,7 @@ import BookPage from '../components/BookPage.astro'
 		</div>
 		<div class="double-page hide">
 			<BookPage />
-			<div class="book-page dedication">
+			<div class="book-page dedication media-hide">
 				<div class="body">
 					<p class="dedication__text">Para aquellas personas que <br>se encuentren perdidas en la vida.</p>
 				</div>
@@ -33,5 +33,11 @@ import BookPage from '../components/BookPage.astro'
 
 	.dedication__text {
 		text-align: right;
+	}
+
+	@media (max-width: 1615px) {
+		.media-hide {
+			display: none; 
+		}
 	}
 </style>

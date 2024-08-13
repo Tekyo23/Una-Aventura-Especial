@@ -7,7 +7,7 @@ interface Props {
 const { title, page } = Astro.props;
 ---
 
-	<div class="book-page">
+	<div class="book-page media-hide">
 		<div class="title">{title}</div>
 		<div class="body"><slot/></div>
 		<div class="page">{page}</div>
@@ -75,4 +75,9 @@ const { title, page } = Astro.props;
 		display: none;
 	}
 
+	@media (max-width: 1615px) {
+		.media-hide {
+			display: none; 
+		}
+	}
 </style>

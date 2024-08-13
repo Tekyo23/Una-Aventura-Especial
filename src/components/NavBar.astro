@@ -140,4 +140,65 @@
             window.location.href = '/';
         };
     };
+
+    // Media Query 1520px
+    const mediaQuery = window.matchMedia('(max-width: 1615px)');
+
+    if (mediaQuery.matches) {
+        const visiblePages = document.querySelectorAll(".book-page")
+        const doublePages = document.querySelectorAll(".double-page")
+        let currentPageIndex = 1;
+        let totalPages = visiblePages.length;
+        let totalDoubles = doublePages.length;
+        let currentDoubleIndex = 0;
+        visiblePages[0].classList.remove("media-hide");
+
+        if (params.get('page') === 'last') {
+            visiblePages[currentPageIndex - 1].classList.add("media-hide");
+            currentPageIndex = totalPages;
+            currentDoubleIndex = totalDoubles - 1;
+            visiblePages[currentPageIndex - 1].classList.remove("media-hide")
+        }
+
+        next_page.onclick = function() {
+            if (currentPageIndex < totalPages) {
+                visiblePages[currentPageIndex - 1].classList.toggle("media-hide");
+                currentPageIndex++;
+                visiblePages[currentPageIndex - 1].classList.toggle("media-hide");
+                if (currentPageIndex % 2 !== 0) {
+                    doublePages[currentDoubleIndex].classList.add("hide")
+                    currentDoubleIndex++;
+                    doublePages[currentDoubleIndex].classList.remove("hide")
+                }
+            } else if (light_theme.classList.contains("hide")) {
+                window.location.href = chapterPaths[currentChapterIndex + 1] + '?mode=dark';
+            } else {
+                window.location.href = chapterPaths[currentChapterIndex + 1];
+            }
+        };
+
+        previous_page.onclick = function() {
+            if (currentPageIndex > 1) {
+                visiblePages[currentPageIndex - 1].classList.toggle("media-hide");
+                currentPageIndex--;
+                visiblePages[currentPageIndex - 1].classList.toggle("media-hide");
+                if (currentPageIndex % 2 === 0) {
+                    doublePages[currentDoubleIndex].classList.add("hide")
+                    currentDoubleIndex--;
+                    doublePages[currentDoubleIndex].classList.remove("hide")
+                }
+            } else if (window.location.pathname != '/chapter1' && window.location.pathname != '/' && light_theme.classList.contains("hide")) {
+                window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last&mode=dark`;
+            } else if (light_theme.classList.contains("hide") && window.location.pathname != '/') {
+                window.location.href = '/' + `?page=last&mode=dark`;
+            } else if (window.location.pathname == '/chapter1') {
+                window.location.href = `/?page=last`;
+            } else if (window.location.pathname != '/chapter1' && window.location.pathname != '/') {
+                window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last`;
+            } else {
+                window.location.href = '/';
+            };
+        }
+        
+    }
 </script>

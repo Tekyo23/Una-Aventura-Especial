@@ -149,7 +149,6 @@
 	const activePage = window.location.pathname;
 
 	chapter.forEach(link => {
-		console.log(link.getAttribute('href'))
 		if (link.getAttribute('href') === activePage) {
 			link.parentElement.classList.add('active');
 		}
