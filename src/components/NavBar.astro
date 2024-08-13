@@ -116,7 +116,7 @@
             visible_pages[currentPageIndex].classList.add("hide");
             currentPageIndex++;
             visible_pages[currentPageIndex].classList.remove("hide");
-        } else if (currentPageIndex = totalPages && light_theme.classList.contains("hide")) {
+        } else if (light_theme.classList.contains("hide")) {
             window.location.href = chapterPaths[currentChapterIndex + 1] + '?mode=dark';
         } else {
             window.location.href = chapterPaths[currentChapterIndex + 1];
@@ -128,13 +128,11 @@
             visible_pages[currentPageIndex].classList.add("hide");
             currentPageIndex--;
             visible_pages[currentPageIndex].classList.remove("hide");
-        } else if (window.location.pathname == '/chapter1' && currentPageIndex == 0 && light_theme.classList.contains("hide")) {
+        } else if (window.location.pathname == '/chapter1' && light_theme.classList.contains("hide")) {
             window.location.href = '/?page=last&mode=dark';
-        } else if (currentPageIndex == 0 && window.location.pathname != '/' && light_theme.classList.contains("hide")) {
+        } else if (window.location.pathname != '/' && light_theme.classList.contains("hide")) {
             window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last&mode=dark`;
-        } else if (currentPageIndex == 0 && window.location.pathname != '/' && light_theme.classList.contains("hide")) {
-            window.location.href = chapterPaths[currentChapterIndex - 1] + `?page=last&mode=dark`;
-        } else if (window.location.pathname == '/chapter1' && currentPageIndex == 0){
+        } else if (window.location.pathname == '/chapter1'){
             window.location.href = '/?page=last';
         } else {
             window.location.href = '/';
