@@ -80,4 +80,23 @@ const { title, page } = Astro.props;
 			display: none; 
 		}
 	}
+
+	@media (max-width: 715px) {
+		.book-page {
+			aspect-ratio: 621 / 796;
+			height: 80dvh;
+		}
+
+		.title {
+			font-size: 1.86vh;
+		}
+
+		.body {
+			font-size: 1.44vh;
+		}
+		
+		.page {
+			font-size: 1.42vh;
+		}
+	}
 </style>
