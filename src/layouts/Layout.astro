@@ -1,5 +1,5 @@
 ---
-import SideBar from '../components/SideBar.astro';
+import SideBar from '../components/SideBar.astro'
 import NavBar from '../components/NavBar.astro';
 
 interface Props {
@@ -62,13 +62,14 @@ const { title } = Astro.props;
 		display: flex;
 		justify-content: center;
 		position: relative;
-		flex-grow: 1;
+		margin-inline: auto;
 	}
 
 	h1, h2, h3, h4, h5, h6, p {
 		margin: 0;
 		display: inline-block;
 	}
+
 	.Sidebar {
 		right: 0;
 	}
