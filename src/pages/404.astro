@@ -18,7 +18,7 @@ import Button from "../components/Button.astro"
                 <Button title="Volver al inicio" href="/"/>
             </div>
             <div class="image-container">
-                <img src="/404-Tekyo.png">
+                <img src="/404-Tekyo.png" class="image404">
             </div>
         </main>
         <footer>
@@ -66,11 +66,12 @@ import Button from "../components/Button.astro"
 	}
 
     main {
+        margin: auto;
         height: calc(100dvh - 65px);
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 206px;
+        justify-content: space-around;
+        padding-inline: 5rem;
     }
 
     footer {
@@ -89,19 +90,21 @@ import Button from "../components/Button.astro"
         flex-direction: column;
         align-items: center;
         width: fit-content;
+        margin-right: 2rem;
     }
 
     .error404__title {
         display: inline-block;
         margin: 0;
         text-transform: uppercase;
+        text-align: center;
         font-size: 48px;
     }
 
     .error404__content {
         margin: 0;
         margin-bottom: 40px;
-        width: 465px;
+        max-width: 465px;
         font-size: 16px;
         text-align: center;
     }
@@ -129,4 +132,44 @@ import Button from "../components/Button.astro"
 	.instagram {
 		fill: #fff
 	}
+
+    @media (max-width: 1025px) {
+        main {
+            padding-inline: 2rem;
+        }
+
+        .error404__title {
+            font-size: 40px;
+        }
+    }
+
+    @media (max-width: 850px) {
+        .error404__title {
+            font-size: 36px;
+        }
+
+        .error404__content {
+            max-width: 45ch;
+            font-size: 14px;
+        }
+
+        .image404 {
+            width: 200px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        .error404__title {
+            font-size: 33px;
+        }
+
+        .error404__content {
+            max-width: 30ch;
+            font-size: 14px;
+        }
+
+        .image404 {
+            width: 150px;
+        }
+    }
 </style>
