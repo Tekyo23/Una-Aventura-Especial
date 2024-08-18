@@ -25,7 +25,7 @@ const { title, page } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		aspect-ratio: 621 / 796;
+		aspect-ratio: 209 / 268;
 		height: 87dvh;
 		background: #fff;
 		padding: 8.43dvh 8.11dvh 8.87dvh 9.73dvh;
@@ -83,7 +83,6 @@ const { title, page } = Astro.props;
 
 	@media (max-width: 715px) {
 		.book-page {
-			aspect-ratio: 621 / 796;
 			height: 80dvh;
 		}
 
@@ -97,6 +96,27 @@ const { title, page } = Astro.props;
 		
 		.page {
 			font-size: 1.42dvh;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.book-page {
+			height: 58dvh;
+			padding: 6.112dvh 5.880dvh 6.431dvh 7.054dvh;
+		}
+
+		.title {
+			font-size: 1.3485dvh;
+			margin-bottom:  2.820dvh;
+		}
+
+		.body {
+			font-size: 1.044dvh;
+		}
+		
+		.page {
+			font-size: 1.0295dvh;
+			bottom: 4.35dvh;
 		}
 	}
 </style>
